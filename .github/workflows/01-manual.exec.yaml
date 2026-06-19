@@ -13,7 +13,7 @@ on:
 
 jobs:
   #nome do job
-  e2e-tests:
+  unitarios-testes:
     # maquina onde o job vai rodar
     runs-on: ubuntu-latest
 
@@ -27,14 +27,13 @@ jobs:
         with:
           node-version: 24.x
 
-           jobs:
-        test:
-          runs-on: ubuntu-latest
-          steps:
-            - uses: actions/checkout@v4
-            - uses: actions/setup-node@v4
-              with:
-                node-version: 24.x
-            - run: npm install
-            - run: npm i mocha
-            - run: npx mocha
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+      - run: npm install
+      - run: npm i mocha
+      - run: npm test
