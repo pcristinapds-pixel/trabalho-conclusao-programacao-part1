@@ -1,0 +1,45 @@
+# CI de Nível 02 - Execução Agendada
+
+# nome da pipeline
+name: 'N2 - Execução Agendada'
+
+# gatilhos / triggers - regras de disparo
+# gatilho manual = workflow_dispatch
+# gatilho agendado = schedule
+
+on:
+  schedule:
+    # cronograma de execução
+    - cron: '0 0 * * 5'
+
+#tarefas dentro da pipeline = jobs
+
+jobs:
+  #nome do job
+  testes-unitarios:
+    # maquina onde o job vai rodar
+    runs-on: ubuntu-latest
+
+    # passos do job
+    steps:
+      # clone do projeto
+      - uses: actions/checkout@v4
+
+      # instalação do node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.x    
+
+      # instalando mocha
+      - run: npm i mocha
+
+      # Executando testes
+      - run: npm test
+
+      # Salvando relatório 
+      - name: Salvando relatorio de execucao
+        uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          path: ./mochawesome-report
+          name: Relatório-Mochawesome
