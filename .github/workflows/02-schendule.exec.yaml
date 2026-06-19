@@ -1,13 +1,16 @@
-# CI de Nível 01 - Disparo Manual através de clique
+# CI de Nível 02 - Execução Agendada
 
 # nome da pipeline
-name: 'N1 - Execução Manual'
+name: 'N2 - Execução Agendada'
 
 # gatilhos / triggers - regras de disparo
 # gatilho manual = workflow_dispatch
+# gatilho agendado = schedule
 
 on:
-  workflow_dispatch:
+  schedule:
+    # cronograma de execução
+    - cron: '0 0 * * 5'
 
 #tarefas dentro da pipeline = jobs
 
@@ -25,8 +28,7 @@ jobs:
       # instalação do node
       - uses: actions/setup-node@v4
         with:
-          node-version: 24.x
-    
+          node-version: 24.x    
 
       # instalando mocha
       - run: npm i mocha

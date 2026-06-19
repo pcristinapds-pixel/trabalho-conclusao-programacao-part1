@@ -4,7 +4,7 @@
   "description": "Trabalho de conclusão da disciplina de Programação para Automação de Testes",
   "main": "index.js",
   "scripts": {
-    "test": "mocha \"test/**/*.test.js\" --exit"
+    "test": "mocha \"test/**/*.test.js\" --reporter mochawesome --reporter-options reportDir=mochawesome-report,reportFilename=report,quiet=true --exit"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,9 @@
   "homepage": "https://github.com/pcristinapds-pixel/trabalho-conclusao-programacao-part1#readme",
   "dependencies": {
     "mocha": "^11.7.6"
+  },
+  "devDependencies": {
+    "mochawesome": "^7.1.3"
   }
 }
 
