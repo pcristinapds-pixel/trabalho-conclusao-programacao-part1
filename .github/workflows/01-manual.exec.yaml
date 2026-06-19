@@ -1,0 +1,40 @@
+# CI de Nível 01 - Disparo Manual através de clique
+
+# nome da pipeline
+name: 'N1 - Execução Manual'
+
+# gatilhos / triggers - regras de disparo
+# gatilho manual = workflow_dispatch
+
+on:
+  workflow_dispatch:
+
+#tarefas dentro da pipeline = jobs
+
+jobs:
+  #nome do job
+  e2e-tests:
+    # maquina onde o job vai rodar
+    runs-on: ubuntu-latest
+
+    # passos do job
+    steps:
+      # clone do projeto
+      - uses: actions/checkout@v4
+
+      # instalção do node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+
+           jobs:
+        test:
+          runs-on: ubuntu-latest
+          steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                node-version: 24.x
+            - run: npm install
+            - run: npm i mocha
+            - run: npx mocha
