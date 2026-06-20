@@ -10,7 +10,7 @@ name: 'N2 - Execução Agendada'
 on:
   schedule:
     # cronograma de execução
-    - cron: '0 0 * * 5'
+    - cron: '0 17 * * *'
 
 #tarefas dentro da pipeline = jobs
 
@@ -50,3 +50,10 @@ jobs:
         with:
           path: ./mochawesome-report
           name: Relatório-Mochawesome
+
+      - name: Deploy para o GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./mochawesome-report
+          publish_branch: gh-pages

@@ -1,0 +1,39 @@
+name: 'N3 - Execução por push'
+
+on:
+  push:
+    branches:
+      - main
+      - entrega
+
+jobs:
+  testes-unitarios:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonando o projeto
+        uses: actions/checkout@v4
+
+      - name: Instalando Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+
+      - name: Instalando Dependências
+        run: npm install
+
+      - name: Instalando Mocha e Mochawesome
+        run: npm install mocha mochawesome --save-dev
+
+      - name: Executando testes unitários
+        run: |
+          npx mocha test/**/*.js \
+          --reporter mochawesome \
+          --reporter-options reportDir=mochawesome-report,reportFilename=index
+
+      - name: Salvando relatório de execução
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Relatorio-Mochawesome
+          path: ./mochawesome-report
