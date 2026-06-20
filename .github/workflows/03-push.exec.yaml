@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-
 jobs:
   testes-unitarios:
     runs-on: ubuntu-latest
@@ -32,7 +31,7 @@ jobs:
         with:
           name: Testes
           path: test-results.xml
-          reporter: mocha-junit
+          reporter: java-junit
         
       # Salvando relatório 
       - name: Salvando relatorio de execucao

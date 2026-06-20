@@ -23,7 +23,6 @@ jobs:
       - name: Clonando o projeto
         uses: actions/checkout@v4
 
-
       # instalação do node
       - name: Instalando Node
         uses: actions/setup-node@v4
@@ -44,7 +43,7 @@ jobs:
         with:
           name: Testes
           path: test-results.xml
-          reporter: mocha-junit
+          reporter: java-junit
       
       # Salvando relatório 
       - name: Salvando relatorio de execucao

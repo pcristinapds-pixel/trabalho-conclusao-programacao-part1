@@ -1,4 +1,4 @@
-<testsuite name="Mocha Tests" tests="3" failures="0" errors="0" skipped="0" timestamp="Sat, 20 Jun 2026 17:20:49 GMT" time="0.002">
+<testsuite name="Mocha Tests" tests="3" failures="0" errors="0" skipped="0" timestamp="Sat, 20 Jun 2026 17:23:36 GMT" time="0.001">
 <testcase classname="Classe de Servi&#xE7;o de Pagamento" name="Validar que um pagamento acima de 100 recebe categoria cara" file="C:\git\Projects\trabalho-conclusao-programacao-part1\test\pagamentos.test.js" time="0"/>
 <testcase classname="Classe de Servi&#xE7;o de Pagamento" name="Validar que um pagamento de menor que 100 recebe categoria padr&#xE3;o" file="C:\git\Projects\trabalho-conclusao-programacao-part1\test\pagamentos.test.js" time="0"/>
 <testcase classname="Classe de Servi&#xE7;o de Pagamento" name="Validar que a consulta retorna apenas o &#xFA;ltimo pagamento realizado" file="C:\git\Projects\trabalho-conclusao-programacao-part1\test\pagamentos.test.js" time="0"/>

@@ -2,14 +2,10 @@
 
 # nome da pipeline
 name: 'N2 - Execução Agendada'
-
-# gatilhos / triggers - regras de disparo
-# gatilho manual = workflow_dispatch
 # gatilho agendado = schedule
 
 on:
   schedule:
-    # cronograma de execução
     - cron: '0 17 * * *'
 
 #tarefas dentro da pipeline = jobs
@@ -46,7 +42,7 @@ jobs:
         with:
           name: Testes
           path: test-results.xml
-          reporter: mocha-junit
+          reporter: java-junit 
 
       # Salvando relatório 
       - name: Salvando relatorio de execucao
