@@ -1,0 +1,72 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-20T17:16:23.939Z",
+    "end": "2026-06-20T17:16:23.940Z",
+    "duration": 1
+  },
+  "tests": [
+    {
+      "title": "Validar que um pagamento acima de 100 recebe categoria cara",
+      "fullTitle": "Classe de Serviço de Pagamento Validar que um pagamento acima de 100 recebe categoria cara",
+      "file": "C:\\git\\Projects\\trabalho-conclusao-programacao-part1\\test\\pagamentos.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Validar que um pagamento de menor que 100 recebe categoria padrão",
+      "fullTitle": "Classe de Serviço de Pagamento Validar que um pagamento de menor que 100 recebe categoria padrão",
+      "file": "C:\\git\\Projects\\trabalho-conclusao-programacao-part1\\test\\pagamentos.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Validar que a consulta retorna apenas o último pagamento realizado",
+      "fullTitle": "Classe de Serviço de Pagamento Validar que a consulta retorna apenas o último pagamento realizado",
+      "file": "C:\\git\\Projects\\trabalho-conclusao-programacao-part1\\test\\pagamentos.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [],
+  "passes": [
+    {
+      "title": "Validar que um pagamento acima de 100 recebe categoria cara",
+      "fullTitle": "Classe de Serviço de Pagamento Validar que um pagamento acima de 100 recebe categoria cara",
+      "file": "C:\\git\\Projects\\trabalho-conclusao-programacao-part1\\test\\pagamentos.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Validar que um pagamento de menor que 100 recebe categoria padrão",
+      "fullTitle": "Classe de Serviço de Pagamento Validar que um pagamento de menor que 100 recebe categoria padrão",
+      "file": "C:\\git\\Projects\\trabalho-conclusao-programacao-part1\\test\\pagamentos.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Validar que a consulta retorna apenas o último pagamento realizado",
+      "fullTitle": "Classe de Serviço de Pagamento Validar que a consulta retorna apenas o último pagamento realizado",
+      "file": "C:\\git\\Projects\\trabalho-conclusao-programacao-part1\\test\\pagamentos.test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ]
+}

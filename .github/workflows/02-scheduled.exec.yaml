@@ -35,26 +35,23 @@ jobs:
       - name: Instalando Dependencias
         run: npm install
 
-      # instalando mocha
-      - name: Instalando Mocha
-        run: npm i mocha
-
       # Executando testes
       - name: Executando testes unitarios
         run: npm test
-
+      
       # Publicando resultados dos testes
       - name: Publicar resultados dos testes
-        uses: daun/action-publish-unit-test-result-files@v3
+        uses: dorny/test-reporter@v1
         if: ${{ always() }}
         with:
-          files: mochawesome-report/report.json
-          check_name: Resultados dos Testes Unitários
+          name: Resultados dos Testes Unitários
+          path: 'test-results/report.json'
+          reporter: 'json'
 
       # Salvando relatório 
       - name: Salvando relatorio de execucao
         uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:
-          path: ./mochawesome-report
-          name: Relatório-Mochawesome
+          path: ./test-results
+          name: Relatório-CTRF
