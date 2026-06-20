@@ -40,16 +40,7 @@ jobs:
       # Executando testes
       - name: Executando testes unitarios
         run: npm test
-        
-      # Publicar resultados dos testes no GitHub
-      - name: Publicar resultados dos testes
-        uses: dorny/test-reporter@v1
-        if: ${{ always() }}
-        with:
-          name: Resultados dos Testes Unitários
-          path: './mochawesome-report/report.json'
-          reporter: 'mocha-json'
-
+      
       # Salvando relatório 
       - name: Salvando relatorio de execucao
         uses: actions/upload-artifact@v4
