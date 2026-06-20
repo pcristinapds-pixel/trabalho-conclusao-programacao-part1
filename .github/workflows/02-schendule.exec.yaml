@@ -31,7 +31,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24.x    
-
+          
+      # instalação dependencias do node
       - name: Instalando Dependencias
         run: npm install
 
