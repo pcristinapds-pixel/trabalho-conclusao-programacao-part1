@@ -10,7 +10,7 @@ name: 'N2 - Execução Agendada'
 on:
   schedule:
     # cronograma de execução
-    - cron: '0 0 * * 5'
+    - cron: '0 14 * * 6'
 
 #tarefas dentro da pipeline = jobs
 
@@ -23,18 +23,25 @@ jobs:
     # passos do job
     steps:
       # clone do projeto
-      - uses: actions/checkout@v4
+      - name: Clonando o projeto
+        uses: actions/checkout@v4
 
       # instalação do node
-      - uses: actions/setup-node@v4
+      - name: Instalando Node
+        uses: actions/setup-node@v4
         with:
           node-version: 24.x    
 
+      - name: Instalando Dependencias
+        run: npm install
+
       # instalando mocha
-      - run: npm i mocha
+      - name: Instalando Mocha
+        run: npm i mocha
 
       # Executando testes
-      - run: npm test
+      - name: Executando testes unitarios
+        run: npm test
 
       # Salvando relatório 
       - name: Salvando relatorio de execucao
