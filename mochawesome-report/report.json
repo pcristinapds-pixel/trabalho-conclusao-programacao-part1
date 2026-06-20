@@ -5,8 +5,8 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-06-20T13:17:56.248Z",
-    "end": "2026-06-20T13:17:56.252Z",
+    "start": "2026-06-20T16:14:37.478Z",
+    "end": "2026-06-20T16:14:37.482Z",
     "duration": 4,
     "testsRegistered": 3,
     "passPercent": 100,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "842178ca-247b-4c1e-afb2-1f1fad1d6493",
+      "uuid": "29d999d6-cd71-4fd9-adb1-0f0f4d78d4d1",
       "title": "",
       "fullFile": "C:\\git\\Projects\\trabalho-conclusao-programacao-part1\\test\\pagamentos.test.js",
       "file": "\\test\\pagamentos.test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "f6b55320-ef00-4319-9dc3-666e3cae6199",
+          "uuid": "ba46ed96-6b29-41d9-ba69-fc496e97fe9a",
           "title": "Classe de Serviço de Pagamento",
           "fullFile": "C:\\git\\Projects\\trabalho-conclusao-programacao-part1\\test\\pagamentos.test.js",
           "file": "\\test\\pagamentos.test.js",
@@ -38,7 +38,7 @@
               "title": "Validar que um pagamento acima de 100 recebe categoria cara",
               "fullTitle": "Classe de Serviço de Pagamento Validar que um pagamento acima de 100 recebe categoria cara",
               "timedOut": false,
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "// Arrange\nconst servicoDePagamento = new ServicoDePagamento();\n// Act\nservicoDePagamento.pagar(\n    '0987-7656-3475',\n    'Sabesp',\n    180.37\n);\nconst ultimoPagamento = servicoDePagamento.consultarUltimoPagamento();\n// Assert\nassert.equal(ultimoPagamento.codigoBarras, '0987-7656-3475');\nassert.equal(ultimoPagamento.empresa, 'Sabesp');\nassert.equal(ultimoPagamento.valor, 180.37);\nassert.equal(ultimoPagamento.categoria, 'cara');",
               "err": {},
-              "uuid": "ec1ad2b6-626f-4071-9719-96b098250fd3",
-              "parentUUID": "f6b55320-ef00-4319-9dc3-666e3cae6199",
+              "uuid": "fe828cc5-3d33-4c92-8285-7b5d7f361c19",
+              "parentUUID": "ba46ed96-6b29-41d9-ba69-fc496e97fe9a",
               "isHook": false,
               "skipped": false
             },
@@ -65,8 +65,8 @@
               "context": null,
               "code": "// Arrange\nconst servicoDePagamento = new ServicoDePagamento();\n// Act\nservicoDePagamento.pagar(\n    '9874-8634-1212',\n    'Enel',\n    99.00\n);\nconst ultimoPagamento = servicoDePagamento.consultarUltimoPagamento();\n// Assert\nassert.equal(ultimoPagamento.codigoBarras, '9874-8634-1212');\nassert.equal(ultimoPagamento.empresa, 'Enel');\nassert.equal(ultimoPagamento.valor, 99.00);\nassert.equal(ultimoPagamento.categoria, 'padrão');",
               "err": {},
-              "uuid": "9da5de6b-05a8-413e-b2a2-2f77ac189892",
-              "parentUUID": "f6b55320-ef00-4319-9dc3-666e3cae6199",
+              "uuid": "48a01e4b-9360-48d1-8630-a8ebd593871d",
+              "parentUUID": "ba46ed96-6b29-41d9-ba69-fc496e97fe9a",
               "isHook": false,
               "skipped": false
             },
@@ -83,22 +83,22 @@
               "context": null,
               "code": "// Arrange\nconst servicoDePagamento = new ServicoDePagamento();\n// Act\nservicoDePagamento.pagar(\n    '0987-7656-3475',\n    'Sabesp',\n    180.37\n);\nservicoDePagamento.pagar(\n    '9874-8634-1212',\n    'Enel',\n    99.00\n);\nconst ultimoPagamento = servicoDePagamento.consultarUltimoPagamento();\n// Assert\nassert.equal(ultimoPagamento.codigoBarras, '9874-8634-1212');\nassert.equal(ultimoPagamento.empresa, 'Enel');\nassert.equal(ultimoPagamento.valor, 99.00);\nassert.equal(ultimoPagamento.categoria, 'padrão');",
               "err": {},
-              "uuid": "ca4a34f2-e0c6-46f3-b666-354d252677ce",
-              "parentUUID": "f6b55320-ef00-4319-9dc3-666e3cae6199",
+              "uuid": "b48d2442-5147-48a7-a96a-67eb90a8aee1",
+              "parentUUID": "ba46ed96-6b29-41d9-ba69-fc496e97fe9a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ec1ad2b6-626f-4071-9719-96b098250fd3",
-            "9da5de6b-05a8-413e-b2a2-2f77ac189892",
-            "ca4a34f2-e0c6-46f3-b666-354d252677ce"
+            "fe828cc5-3d33-4c92-8285-7b5d7f361c19",
+            "48a01e4b-9360-48d1-8630-a8ebd593871d",
+            "b48d2442-5147-48a7-a96a-67eb90a8aee1"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1,
+          "duration": 0,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -30,7 +30,7 @@ jobs:
       - name: Instalando Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24.x    
+          node-version: latest 
 
       - name: Instalando Dependencias
         run: npm install
@@ -43,6 +43,15 @@ jobs:
       - name: Executando testes unitarios
         run: npm test
 
+      # Publicar resultados dos testes no GitHub
+      - name: Publicar resultados dos testes
+        uses: dorny/test-reporter@v1
+        if: ${{ always() }}
+        with:
+          name: Resultados dos Testes Unitários
+          path: './mochawesome-report/report.json'
+          reporter: 'mocha-json'
+
       # Salvando relatório 
       - name: Salvando relatorio de execucao
         uses: actions/upload-artifact@v4
@@ -50,10 +59,3 @@ jobs:
         with:
           path: ./mochawesome-report
           name: Relatório-Mochawesome
-
-      - name: Deploy para o GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./mochawesome-report
-          publish_branch: gh-pages

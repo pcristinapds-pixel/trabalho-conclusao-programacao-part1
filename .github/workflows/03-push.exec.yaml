@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - entrega
+
 
 jobs:
   testes-unitarios:
@@ -17,7 +17,7 @@ jobs:
       - name: Instalando Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24.x
+          node-version: latest
 
       - name: Instalando Dependências
         run: npm install
@@ -26,14 +26,21 @@ jobs:
         run: npm install mocha mochawesome --save-dev
 
       - name: Executando testes unitários
-        run: |
-          npx mocha test/**/*.js \
-          --reporter mochawesome \
-          --reporter-options reportDir=mochawesome-report,reportFilename=index
+        run: npm test
 
-      - name: Salvando relatório de execução
-        uses: actions/upload-artifact@v4
-        if: always()
+      # Publicar resultados dos testes no GitHub
+      - name: Publicar resultados dos testes
+        uses: dorny/test-reporter@v1
+        if: ${{ always() }}
         with:
-          name: Relatorio-Mochawesome
+          name: Resultados dos Testes Unitários
+          path: './mochawesome-report/report.json'
+          reporter: 'mocha-json'
+
+      # Salvando relatório 
+      - name: Salvando relatorio de execucao
+        uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
           path: ./mochawesome-report
+          name: Relatório-Mochawesome
