@@ -38,18 +38,18 @@ jobs:
         run: npm test
       
       # Publicando resultados dos testes
-      - name: Publicar resultados dos testes
+      - name: Test Reporter
         uses: dorny/test-reporter@v1
         if: ${{ always() }}
         with:
-          name: Resultados dos Testes Unitários
-          path: 'test-results/report.json'
-          reporter: 'json'
+          name: Testes
+          path: test-results.xml
+          reporter: mocha-junit
       
       # Salvando relatório 
       - name: Salvando relatorio de execucao
         uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:
-          path: ./test-results
-          name: Relatório-CTRF
+          path: ./test-results.xml
+          name: Relatório-Testes

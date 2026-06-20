@@ -4,7 +4,7 @@
   "description": "Trabalho de conclusão da disciplina de Programação para Automação de Testes",
   "main": "index.js",
   "scripts": {
-    "test": "mocha \"test/**/*.test.js\" --reporter json > test-results/report.json --exit"
+    "test": "mocha \"test/**/*.test.js\" --reporter xunit > test-results.xml --exit"
   },
   "repository": {
     "type": "git",
