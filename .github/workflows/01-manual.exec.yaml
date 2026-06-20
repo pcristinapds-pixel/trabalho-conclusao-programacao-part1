@@ -48,7 +48,7 @@ jobs:
         with:
           name: Resultados dos Testes Unitários
           path: './mochawesome-report/report.json'
-          reporter: 'mochawesome'
+          reporter: 'mocha-json'
 
       # Salvando relatório 
       - name: Salvando relatorio de execucao

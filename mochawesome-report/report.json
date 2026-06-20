@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-06-20T16:36:53.722Z",
-    "end": "2026-06-20T16:36:53.725Z",
-    "duration": 3,
+    "start": "2026-06-20T16:53:37.256Z",
+    "end": "2026-06-20T16:53:37.260Z",
+    "duration": 4,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "552f6972-3d36-492e-b1c3-62b3c128668c",
+      "uuid": "4edb0f93-6a56-40d3-9594-030635aa58b1",
       "title": "",
       "fullFile": "C:\\git\\Projects\\trabalho-conclusao-programacao-part1\\test\\pagamentos.test.js",
       "file": "\\test\\pagamentos.test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "508cfa74-73c4-4adf-aa31-c85136acf5c4",
+          "uuid": "caf81a4c-2d3a-44bb-9fc9-04d221f4ea75",
           "title": "Classe de Serviço de Pagamento",
           "fullFile": "C:\\git\\Projects\\trabalho-conclusao-programacao-part1\\test\\pagamentos.test.js",
           "file": "\\test\\pagamentos.test.js",
@@ -38,7 +38,7 @@
               "title": "Validar que um pagamento acima de 100 recebe categoria cara",
               "fullTitle": "Classe de Serviço de Pagamento Validar que um pagamento acima de 100 recebe categoria cara",
               "timedOut": false,
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "// Arrange\nconst servicoDePagamento = new ServicoDePagamento();\n// Act\nservicoDePagamento.pagar(\n    '0987-7656-3475',\n    'Sabesp',\n    180.37\n);\nconst ultimoPagamento = servicoDePagamento.consultarUltimoPagamento();\n// Assert\nassert.equal(ultimoPagamento.codigoBarras, '0987-7656-3475');\nassert.equal(ultimoPagamento.empresa, 'Sabesp');\nassert.equal(ultimoPagamento.valor, 180.37);\nassert.equal(ultimoPagamento.categoria, 'cara');",
               "err": {},
-              "uuid": "12ad2d8e-ea4f-42b9-8bf8-7c1a6bbf3da7",
-              "parentUUID": "508cfa74-73c4-4adf-aa31-c85136acf5c4",
+              "uuid": "165f1a0e-1c54-4aeb-9d91-6b985ac7a615",
+              "parentUUID": "caf81a4c-2d3a-44bb-9fc9-04d221f4ea75",
               "isHook": false,
               "skipped": false
             },
@@ -65,8 +65,8 @@
               "context": null,
               "code": "// Arrange\nconst servicoDePagamento = new ServicoDePagamento();\n// Act\nservicoDePagamento.pagar(\n    '9874-8634-1212',\n    'Enel',\n    99.00\n);\nconst ultimoPagamento = servicoDePagamento.consultarUltimoPagamento();\n// Assert\nassert.equal(ultimoPagamento.codigoBarras, '9874-8634-1212');\nassert.equal(ultimoPagamento.empresa, 'Enel');\nassert.equal(ultimoPagamento.valor, 99.00);\nassert.equal(ultimoPagamento.categoria, 'padrão');",
               "err": {},
-              "uuid": "e7bbef2a-9652-4a57-ab80-246828d3fc99",
-              "parentUUID": "508cfa74-73c4-4adf-aa31-c85136acf5c4",
+              "uuid": "ded61d15-a6da-4e41-9eef-fbe6140fc09a",
+              "parentUUID": "caf81a4c-2d3a-44bb-9fc9-04d221f4ea75",
               "isHook": false,
               "skipped": false
             },
@@ -83,22 +83,22 @@
               "context": null,
               "code": "// Arrange\nconst servicoDePagamento = new ServicoDePagamento();\n// Act\nservicoDePagamento.pagar(\n    '0987-7656-3475',\n    'Sabesp',\n    180.37\n);\nservicoDePagamento.pagar(\n    '9874-8634-1212',\n    'Enel',\n    99.00\n);\nconst ultimoPagamento = servicoDePagamento.consultarUltimoPagamento();\n// Assert\nassert.equal(ultimoPagamento.codigoBarras, '9874-8634-1212');\nassert.equal(ultimoPagamento.empresa, 'Enel');\nassert.equal(ultimoPagamento.valor, 99.00);\nassert.equal(ultimoPagamento.categoria, 'padrão');",
               "err": {},
-              "uuid": "3b0cbdc8-1fd5-4173-b6e6-090bdebce1a5",
-              "parentUUID": "508cfa74-73c4-4adf-aa31-c85136acf5c4",
+              "uuid": "f9d0fecd-03cf-452d-8252-70baaf639e40",
+              "parentUUID": "caf81a4c-2d3a-44bb-9fc9-04d221f4ea75",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "12ad2d8e-ea4f-42b9-8bf8-7c1a6bbf3da7",
-            "e7bbef2a-9652-4a57-ab80-246828d3fc99",
-            "3b0cbdc8-1fd5-4173-b6e6-090bdebce1a5"
+            "165f1a0e-1c54-4aeb-9d91-6b985ac7a615",
+            "ded61d15-a6da-4e41-9eef-fbe6140fc09a",
+            "f9d0fecd-03cf-452d-8252-70baaf639e40"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1,
+          "duration": 0,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
