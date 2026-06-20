@@ -43,12 +43,11 @@ jobs:
 
       # Publicando resultados dos testes
       - name: Publicar resultados dos testes
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: daun/action-publish-unit-test-result-files@v3
         if: ${{ always() }}
         with:
-          files: ./mochawesome-report/report.json
+          files: mochawesome-report/report.json
           check_name: Resultados dos Testes Unitários
-          comment_mode: always
       
       # Salvando relatório 
       - name: Salvando relatorio de execucao
