@@ -31,7 +31,7 @@ jobs:
           node-version: latest      
 
       - name: Instalando Dependencias
-        run: npm install
+        run: npm ci
 
       # Executando testes
       - name: Executando testes unitarios
