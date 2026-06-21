@@ -23,13 +23,16 @@ Demonstrar conhecimentos em:
 
 ## 🛠️ Tecnologias Utilizadas
 
-| Tecnologia         | Versão  | Propósito                    |
-| ------------------ | ------- | ---------------------------- |
-| **Node.js**        | 24.x    | Runtime JavaScript           |
-| **Mocha**          | ^11.7.6 | Framework de testes          |
-| **Mochawesome**    | ^7.1.3  | Relatórios visuais de testes |
-| **GitHub Actions** | Latest  | Integração Contínua (CI)     |
+| Tecnologia              | Versão  | Propósito                           |
+| ----------------------- | ------- | ----------------------------------- |
+| **Node.js**             | 24.x    | Runtime JavaScript                  |
+| **Mocha**               | ^11.7.6 | Framework de testes                 |
+| **Mochawesome**         | ^7.1.3  | Relatórios visuais de testes        |
+| **JUnit XML**           | Latest  | Formato de relatório de testes      |
+| **GitHub Actions**      | Latest  | Integração Contínua (CI)            |
+| **dorny/test-reporter** | v1      | Publicação de resultados dos testes |
 
+```
 ---
 
 ## 📦 Instalação
@@ -83,11 +86,21 @@ A execução dos testes irá:
 ## 📊 Relatórios de Testes
 
 Os relatórios de execução são gerados automaticamente durante a pipeline de CI.
+Os testes geram resultados no formato **JUnit XML**, amplamente utilizado em pipelines de CI/CD para integração com ferramentas de análise e publicação de testes.
 
-### Arquivos gerados
+Arquivo gerado:
 
-* `test-results.xml`
-* Relatório HTML do Mochawesome
+```text
+test-results.xml
+```
+
+Esse arquivo é utilizado pela action:
+
+```yaml
+dorny/test-reporter@v1
+```
+
+para publicar os resultados da execução diretamente no GitHub Actions.
 
 ---
 
@@ -253,28 +266,6 @@ npm i mocha
 ```
 
 ---
-
-## 💡 Conceitos Aplicados
-
-### Integração Contínua (CI)
-
-Execução automática de validações sempre que alterações são realizadas no projeto.
-
-### GitHub Actions
-
-Ferramenta utilizada para automatizar processos de build, testes e validações.
-
-### Testes Automatizados
-
-Execução automática da suíte de testes para garantir qualidade e estabilidade da aplicação.
-
-### Relatórios de Teste
-
-Geração automática de relatórios contendo os resultados detalhados das execuções.
-
-### Artefatos (Artifacts)
-
-Arquivos gerados durante a execução da pipeline e armazenados pelo GitHub para download posterior.
 
 ---
 
